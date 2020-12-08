@@ -10,4 +10,8 @@
 
 clearvars; clc; close all;
 
-%%
+%% Test:
+hand = importrobot('hand.urdf');
+figure(1)
+%subplot(2,1,1)
+show(hand,'visuals','on','collision','off');
