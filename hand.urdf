@@ -22,7 +22,7 @@
         <visual>
             <origin xyz = "0 0 0" />
             <geometry>
-                <cylinder radius = "1" length = "1"  />
+                <cylinder radius = "2" length = "6"  />
             </geometry>
             <material name = "gray 1">
                 <color rgba = "0 0 0 1" />
@@ -41,16 +41,15 @@
             <inertia ixx = "0.5" iyy = "0.5" izz = "0.5" ixy = "0" ixz = "0" iyz = "0" />
         </inertial>
         <visual>
-            <origin xyz = "0 0 0" />
+            <origin xyz = "-8 0 0" />
             <geometry>
-                <cylinder radius = "1" length = "1"  />
+                <cylinder radius = "5" length = "2"  />
             </geometry>
             <material name = "gray 1">
-                <color rgba = "0 0 0 1" />
+                <color rgba = "1 0 0 1" />
             </material>
         </visual>
 	</link>
-
     <link name="Thumb"> 
         <inertial>
             <origin xyz = "0 0 0" />
@@ -60,14 +59,13 @@
         <visual>
             <origin xyz = "0 0 0" />
             <geometry>
-                <cylinder radius = "1" length = "1"  />
+                <cylinder radius = "1" length = "4"  />
             </geometry>
             <material name = "gray 1">
-                <color rgba = "0 0 0 1" />
+                <color rgba = "0 1 0 1" />
             </material>
         </visual>
 	</link>
-
     <link name="Index"> 
         <inertial>
             <origin xyz = "0 0 0" />
@@ -77,14 +75,13 @@
         <visual>
             <origin xyz = "0 0 0" />
             <geometry>
-                <cylinder radius = "1" length = "1"  />
+                <cylinder radius = "1" length = "4.5"  />
             </geometry>
             <material name = "gray 1">
-                <color rgba = "0 0 0 1" />
+                <color rgba = "0 1 0 1" />
             </material>
         </visual>
 	</link>
-
     <link name="Middle"> 
         <inertial>
             <origin xyz = "0 0 0" />
@@ -94,14 +91,13 @@
         <visual>
             <origin xyz = "0 0 0" />
             <geometry>
-                <cylinder radius = "1" length = "1"  />
+                <cylinder radius = "1" length = "5"  />
             </geometry>
             <material name = "gray 1">
-                <color rgba = "0 0 0 1" />
+                <color rgba = "0 1 0 1" />
             </material>
         </visual>
 	</link>
-
     <link name="Ring"> 
         <inertial>
             <origin xyz = "0 0 0" />
@@ -111,14 +107,13 @@
         <visual>
             <origin xyz = "0 0 0" />
             <geometry>
-                <cylinder radius = "1" length = "1"  />
+                <cylinder radius = "0.7" length = "4"  />
             </geometry>
             <material name = "gray 1">
-                <color rgba = "0 0 0 1" />
+                <color rgba = "0 1 0 1" />
             </material>
         </visual>
 	</link>
-
     <link name="Pinky"> 
         <inertial>
             <origin xyz = "0 0 0" />
@@ -128,10 +123,10 @@
         <visual>
             <origin xyz = "0 0 0" />
             <geometry>
-                <cylinder radius = "1" length = "1"  />
+                <cylinder radius = "0.5" length = "3"  />
             </geometry>
             <material name = "gray 1">
-                <color rgba = "0 0 0 1" />
+                <color rgba = "0 1 0 1" />
             </material>
         </visual>
 	</link>
@@ -149,43 +144,44 @@
     <joint name="wrist" type="revolute">
         <parent link="Forearm"/>
         <child link="Palm"/>
-        <limit effort="1000.0" lower="-30" upper="0" velocity="0.5"/>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <limit effort="1000.0" lower="-0.26" upper="0.26" velocity="0.5"/>
+        <origin xyz="0 0 0" rpy="0 1.54 0" />
         <axis xyz="0 1 0" />
     </joint>
+
     <joint name="F1" type="revolute">
         <parent link="Palm"/>
         <child link="Thumb"/>
-        <limit effort="1000.0" lower="-30" upper="0" velocity="0.5"/>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <limit effort="1000.0" lower="-0" upper="1" velocity="0.5"/>
+        <origin xyz="-2 7 0" rpy="1.54 0 0" />
         <axis xyz="0 1 0" />
     </joint>
     <joint name="F2" type="revolute">
         <parent link="Palm"/>
         <child link="Index"/>
-        <limit effort="1000.0" lower="-30" upper="0" velocity="0.5"/>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <limit effort="1000.0" lower="-0" upper="1" velocity="0.5"/>
+        <origin xyz="-8.5 3 0" rpy="0.4 1.54 0" />
         <axis xyz="0 1 0" />
     </joint>
     <joint name="F3" type="revolute">
         <parent link="Palm"/>
         <child link="Middle"/>
-        <limit effort="1000.0" lower="-30" upper="0" velocity="0.5"/>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <limit effort="1000.0" lower="-0" upper="1" velocity="0.5"/>
+        <origin xyz="-9.4 0 0" rpy="0 1.54 0" />
         <axis xyz="0 1 0" />
     </joint>
     <joint name="F4" type="revolute">
         <parent link="Palm"/>
         <child link="Ring"/>
-        <limit effort="1000.0" lower="-30" upper="0" velocity="0.5"/>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <limit effort="1000.0" lower="-0" upper="1" velocity="0.5"/>
+        <origin xyz="-8 -2.7 0" rpy="-0.4 1.54 0" />
         <axis xyz="0 1 0" />
     </joint>
     <joint name="F5" type="revolute">
         <parent link="Palm"/>
         <child link="Pinky"/>
-        <limit effort="1000.0" lower="-30" upper="0" velocity="0.5"/>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <limit effort="1000.0" lower="-0" upper="1" velocity="0.5"/>
+        <origin xyz="-6.5 -4.5 0" rpy="-0.8 1.54 0" />
         <axis xyz="0 1 0" />
     </joint>
 </robot>
